@@ -6,3 +6,5 @@ sealed class CategoryScreenEvent extends Equatable {
   @override
   List<Object> get props => [];
 }
+
+class CategoryScreenInfoLoad extends CategoryScreenEvent {}
