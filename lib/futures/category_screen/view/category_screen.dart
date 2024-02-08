@@ -28,32 +28,36 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
           appBar: AppBar(
             title: const Text('Categories'),
           ),
-          body: MasonryGridView.count(
-              padding: const EdgeInsets.only(top: 120, left: 4, right: 4),
-              itemCount: Category.categories.length,
-              crossAxisCount: 3,
-              mainAxisSpacing: 4,
-              crossAxisSpacing: 4,
-              itemBuilder: (context, index) {
-                final height = state.extents[index] * 100;
-                final category = state.categories[index];
-                return InkWell(
-                  onTap: () {},
-                  child: Hero(
-                    tag: category.id,
-                    child: Container(
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(8),
-                          image: DecorationImage(
-                              image: NetworkImage(
-                                category.imageUrl,
-                              ),
-                              fit: BoxFit.cover)),
-                      height: height.toDouble(),
-                    ),
-                  ),
-                );
-              }),
+          body: state.extents.isNotEmpty && state.categories.isNotEmpty
+              ? MasonryGridView.count(
+                  padding: const EdgeInsets.only(top: 120, left: 4, right: 4),
+                  itemCount: Category.categories.length,
+                  crossAxisCount: 3,
+                  mainAxisSpacing: 4,
+                  crossAxisSpacing: 4,
+                  itemBuilder: (context, index) {
+                    final height = state.extents[index] * 100;
+                    final category = state.categories[index];
+                    return InkWell(
+                      onTap: () {},
+                      child: Hero(
+                        tag: category.id,
+                        child: Container(
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(8),
+                              image: DecorationImage(
+                                  image: NetworkImage(
+                                    category.imageUrl,
+                                  ),
+                                  fit: BoxFit.cover)),
+                          height: height.toDouble(),
+                        ),
+                      ),
+                    );
+                  })
+              : const Center(
+                  child: CircularProgressIndicator.adaptive(),
+                ),
         );
       },
     );
