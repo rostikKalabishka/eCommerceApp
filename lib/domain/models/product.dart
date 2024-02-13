@@ -41,6 +41,18 @@ class Product extends Equatable {
         stock: json['stock'] as int? ?? 0);
   }
 
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'name': name,
+      'description': description,
+      'price': price,
+      'imageUrl': imageUrl,
+      'category': category,
+      'stock': stock
+    };
+  }
+
   Product copyWith({
     String? id,
     String? name,
