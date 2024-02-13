@@ -1,10 +1,20 @@
 part of 'catalog_screen_bloc.dart';
 
-sealed class CatalogScreenState extends Equatable {
-  const CatalogScreenState();
-  
-  @override
-  List<Object> get props => [];
-}
+class CatalogScreenState extends Equatable {
+  const CatalogScreenState({this.productList = const [], this.error = ''});
+  final List<Product> productList;
+  final Object error;
 
-final class CatalogScreenInitial extends CatalogScreenState {}
+  @override
+  List<Object> get props => [productList, error];
+
+  CatalogScreenState copyWith({
+    List<Product>? productList,
+    Object? error,
+  }) {
+    return CatalogScreenState(
+      productList: productList ?? this.productList,
+      error: error ?? this.error,
+    );
+  }
+}

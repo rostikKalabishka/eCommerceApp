@@ -1,9 +1,11 @@
 import 'package:e_commerce_app/domain/models/category.dart';
 import 'package:e_commerce_app/futures/category_screen/bloc/category_screen_bloc.dart';
+import 'package:e_commerce_app/router/router.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:go_router/go_router.dart';
 
 class CategoriesScreen extends StatefulWidget {
   const CategoriesScreen({super.key});
@@ -39,7 +41,10 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
                     final height = state.extents[index] * 100;
                     final category = state.categories[index];
                     return InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        context.goNamed(AppRouterPath.catalogScreen,
+                            extra: category.name);
+                      },
                       child: Hero(
                         tag: category.id,
                         child: Container(

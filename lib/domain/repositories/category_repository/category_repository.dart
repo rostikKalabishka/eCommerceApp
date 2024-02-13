@@ -8,7 +8,10 @@ class CategoryRepository {
 
   Future<List<Category>> fetchCategories() async {
     try {
-      final categoriesData = await dbClient.fetchAll(collections: 'categories');
+      final categoriesData = await dbClient.fetchAllBundle(
+          collections: 'categories',
+          bundleUrl:
+              'https://us-central1-ecommerceapp-1909c.cloudfunctions.net/ext-firestore-bundle-builder-serve');
       final categories = categoriesData
           .map<Category>(
               (categoriesData) => Category.fromJson(categoriesData.data))

@@ -1,0 +1,65 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "e_commerce_app",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "e_commerce_app (profile mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "e_commerce_app (release mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "db_client",
+            "cwd": "packages/db_client",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "db_client (profile mode)",
+            "cwd": "packages/db_client",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "db_client (release mode)",
+            "cwd": "packages/db_client",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "payment_client",
+            "cwd": "packages/payment_client",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "payment_client (profile mode)",
+            "cwd": "packages/payment_client",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "payment_client (release mode)",
+            "cwd": "packages/payment_client",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        }
+    ]
+}
