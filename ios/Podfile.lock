@@ -750,11 +750,48 @@ PODS:
   - nanopb/decode (2.30909.1)
   - nanopb/encode (2.30909.1)
   - PromisesObjC (2.3.1)
+  - Stripe (23.18.3):
+    - StripeApplePay (= 23.18.3)
+    - StripeCore (= 23.18.3)
+    - StripePayments (= 23.18.3)
+    - StripePaymentsUI (= 23.18.3)
+    - StripeUICore (= 23.18.3)
+  - stripe_ios (0.0.1):
+    - Flutter
+    - Stripe (~> 23.18.0)
+    - StripeApplePay (~> 23.18.0)
+    - StripeFinancialConnections (~> 23.18.0)
+    - StripePayments (~> 23.18.0)
+    - StripePaymentSheet (~> 23.18.0)
+    - StripePaymentsUI (~> 23.18.0)
+  - StripeApplePay (23.18.3):
+    - StripeCore (= 23.18.3)
+  - StripeCore (23.18.3)
+  - StripeFinancialConnections (23.18.3):
+    - StripeCore (= 23.18.3)
+    - StripeUICore (= 23.18.3)
+  - StripePayments (23.18.3):
+    - StripeCore (= 23.18.3)
+    - StripePayments/Stripe3DS2 (= 23.18.3)
+  - StripePayments/Stripe3DS2 (23.18.3):
+    - StripeCore (= 23.18.3)
+  - StripePaymentSheet (23.18.3):
+    - StripeApplePay (= 23.18.3)
+    - StripeCore (= 23.18.3)
+    - StripePayments (= 23.18.3)
+    - StripePaymentsUI (= 23.18.3)
+  - StripePaymentsUI (23.18.3):
+    - StripeCore (= 23.18.3)
+    - StripePayments (= 23.18.3)
+    - StripeUICore (= 23.18.3)
+  - StripeUICore (23.18.3):
+    - StripeCore (= 23.18.3)
 
 DEPENDENCIES:
   - cloud_firestore (from `.symlinks/plugins/cloud_firestore/ios`)
   - firebase_core (from `.symlinks/plugins/firebase_core/ios`)
   - Flutter (from `Flutter`)
+  - stripe_ios (from `.symlinks/plugins/stripe_ios/ios`)
 
 SPEC REPOS:
   trunk:
@@ -774,6 +811,14 @@ SPEC REPOS:
     - leveldb-library
     - nanopb
     - PromisesObjC
+    - Stripe
+    - StripeApplePay
+    - StripeCore
+    - StripeFinancialConnections
+    - StripePayments
+    - StripePaymentSheet
+    - StripePaymentsUI
+    - StripeUICore
 
 EXTERNAL SOURCES:
   cloud_firestore:
@@ -782,6 +827,8 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/firebase_core/ios"
   Flutter:
     :path: Flutter
+  stripe_ios:
+    :path: ".symlinks/plugins/stripe_ios/ios"
 
 SPEC CHECKSUMS:
   abseil: 926fb7a82dc6d2b8e1f2ed7f3a718bce691d1e46
@@ -803,7 +850,16 @@ SPEC CHECKSUMS:
   leveldb-library: e74c27d8fbd22854db7cb467968a0b8aa1db7126
   nanopb: d4d75c12cd1316f4a64e3c6963f879ecd4b5e0d5
   PromisesObjC: c50d2056b5253dadbd6c2bea79b0674bd5a52fa4
+  Stripe: e046335ab6e3f25d39f1a55bd98620a85269cffa
+  stripe_ios: 37dd66ec680264019be16c5f47333f381164e6a6
+  StripeApplePay: 1aa77f8ec7a6d9463fa8f49ae0672fe59dbf4c73
+  StripeCore: fe10c34fb3c9ae18b986913f7e4460e7c653ce93
+  StripeFinancialConnections: 6022426894046f26fe21d348da02d83d8a637fb0
+  StripePayments: 7084fed30c5f03f15ae23c5dce63715ba0b53e15
+  StripePaymentSheet: c8d25d4133476c6238d3cc932fb8219bb5ea49c0
+  StripePaymentsUI: c12de264eda974d91e43a769f53a6c6afc9a1715
+  StripeUICore: 090c4fe916d039616ce8f8de30392f4aeb33dd16
 
-PODFILE CHECKSUM: 619138bce627a063457ef35693faa8431d36bdea
+PODFILE CHECKSUM: 3f3697c847c52bb2f1c7146b71ef2faef67d110f
 
 COCOAPODS: 1.14.3

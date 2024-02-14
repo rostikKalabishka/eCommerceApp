@@ -4,8 +4,9 @@ import 'package:equatable/equatable.dart';
 part 'checkout_screen_event.dart';
 part 'checkout_screen_state.dart';
 
-class CheckoutScreenBloc extends Bloc<CheckoutScreenEvent, CheckoutScreenState> {
-  CheckoutScreenBloc() : super(CheckoutScreenInitial()) {
+class CheckoutScreenBloc
+    extends Bloc<CheckoutScreenEvent, CheckoutScreenState> {
+  CheckoutScreenBloc() : super(const CheckoutScreenState()) {
     on<CheckoutScreenEvent>((event, emit) {
       // TODO: implement event handler
     });

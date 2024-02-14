@@ -9,6 +9,7 @@ import 'package:e_commerce_app/router/router.dart';
 
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_stripe/flutter_stripe.dart';
 
 final dbClient = DbClient();
 final categoryRepository = CategoryRepository(dbClient: dbClient);
@@ -20,9 +21,13 @@ var cart = const Cart(userId: userId, cartItem: []);
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  Stripe.publishableKey =
+      'pk_test_51OjjtEHDS2z5QJyxiSU2xSTgC4o1wpu3XPAi8ATaywSCTuIhSyhKZoKAixoJkJng5TF6YilEmSKdkORbigtPtkLl00WGGzvbnC';
 
   // productRepository.createProducts();
   // categoryRepository.createCategories();
+  await Stripe.instance.applySettings();
+
   runApp(MyApp());
 }
 

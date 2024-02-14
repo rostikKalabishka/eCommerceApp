@@ -1,10 +1,9 @@
 part of 'checkout_screen_bloc.dart';
 
-sealed class CheckoutScreenState extends Equatable {
-  const CheckoutScreenState();
-  
+class CheckoutScreenState extends Equatable {
+  const CheckoutScreenState({this.isLoading = false});
+  final bool isLoading;
+
   @override
   List<Object> get props => [];
 }
-
-final class CheckoutScreenInitial extends CheckoutScreenState {}

@@ -1,8 +1,10 @@
 import 'package:e_commerce_app/futures/cart_screen/bloc/cart_screen_bloc.dart';
+import 'package:e_commerce_app/router/router.dart';
 import 'package:e_commerce_app/widget/cart_item_widget.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
 class CartScreen extends StatefulWidget {
   const CartScreen({super.key});
@@ -69,7 +71,10 @@ class _CartScreenState extends State<CartScreen> {
                 ),
                 Expanded(
                     child: FilledButton(
-                        onPressed: () {}, child: const Text('Pay Now')))
+                        onPressed: () {
+                          context.pushNamed(AppRouterPathName.checkoutScreen);
+                        },
+                        child: const Text('Pay Now')))
               ],
             ),
           ),
