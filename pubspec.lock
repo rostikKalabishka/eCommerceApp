@@ -303,6 +303,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.8.3"
+  payment_client:
+    dependency: "direct main"
+    description:
+      path: "packages/payment_client"
+      relative: true
+    source: path
+    version: "0.0.1"
   plugin_platform_interface:
     dependency: transitive
     description:
