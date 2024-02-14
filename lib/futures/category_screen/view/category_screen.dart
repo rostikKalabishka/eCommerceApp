@@ -42,11 +42,11 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
                     final category = state.categories[index];
                     return InkWell(
                       onTap: () {
-                        context.go(AppRouterPath.catalogScreen,
+                        context.pushNamed(AppRouterPathName.catalogScreen,
                             extra: category.name);
                       },
                       child: Hero(
-                        tag: category.id,
+                        tag: '${category.id}$index',
                         child: Container(
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(8),

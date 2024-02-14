@@ -25,7 +25,7 @@ class ScreenFactory {
     );
   }
 
-  makeCatalogScreen(String category) {
+  Widget makeCatalogScreen(String category) {
     return BlocProvider(
       create: (_) => CatalogScreenBloc(),
       child: CatalogScreen(
@@ -34,14 +34,14 @@ class ScreenFactory {
     );
   }
 
-  makeCartScreen() {
+  Widget makeCartScreen() {
     return BlocProvider(
       create: (_) => CartScreenBloc(),
       child: const CartScreen(),
     );
   }
 
-  makeCheckoutScreen() {
+  Widget makeCheckoutScreen() {
     return BlocProvider(
       create: (_) => CheckoutScreenBloc(),
       child: const CheckoutScreen(),

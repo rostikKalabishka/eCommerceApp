@@ -16,3 +16,12 @@ class LoadCatalogEvent extends CatalogScreenEvent {
 }
 
 class CancelProductSubscriptionEvent extends CatalogScreenEvent {}
+
+class AddProductToCartEvent extends CatalogScreenEvent {
+  final Product product;
+
+  const AddProductToCartEvent({required this.product});
+
+  @override
+  List<Object> get props => super.props..addAll([product]);
+}

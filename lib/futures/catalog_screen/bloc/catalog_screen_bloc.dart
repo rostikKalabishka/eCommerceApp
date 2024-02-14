@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
+import 'package:e_commerce_app/domain/models/cart_item.dart';
 import 'package:e_commerce_app/domain/models/product.dart';
 import 'package:e_commerce_app/main.dart';
 import 'package:equatable/equatable.dart';
@@ -19,6 +20,8 @@ class CatalogScreenBloc extends Bloc<CatalogScreenEvent, CatalogScreenState> {
           await _loadCatalog(event, emit);
         } else if (event is CancelProductSubscriptionEvent) {
           await _cancelProductSubscription(event, emit);
+        } else if (event is AddProductToCartEvent) {
+          await _addProductToCartEvent(event, emit);
         }
       },
     );
@@ -36,7 +39,7 @@ class CatalogScreenBloc extends Bloc<CatalogScreenEvent, CatalogScreenState> {
       });
       await completer.future;
       log('${product.isEmpty}');
-      emit(state.copyWith(productList: product));
+      emit(state.copyWith(productList: product, cartItemList: cart.cartItem));
     } catch (e) {
       log('$e');
       emit(state.copyWith(error: e));
@@ -46,5 +49,15 @@ class CatalogScreenBloc extends Bloc<CatalogScreenEvent, CatalogScreenState> {
   Future<void> _cancelProductSubscription(CancelProductSubscriptionEvent event,
       Emitter<CatalogScreenState> emit) async {
     await _productSubscription?.cancel();
+  }
+
+  Future<void> _addProductToCartEvent(
+      AddProductToCartEvent event, Emitter<CatalogScreenState> emit) async {
+    try {
+      cartRepository.addProductToCart(event.product, 1);
+      emit(state.copyWith(cartItemList: cart.cartItem));
+    } catch (e) {
+      emit(state.copyWith(error: e));
+    }
   }
 }
