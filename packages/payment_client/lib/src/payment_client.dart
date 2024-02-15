@@ -2,7 +2,8 @@ import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 
-const ENDPOINT_METHOD_ID_URL = '';
+const ENDPOINT_METHOD_ID_URL =
+    'https://stripepayendpointmethodid-gz7apka6sq-uc.a.run.app';
 
 class PaymentClient {
   final http.Client client;
@@ -18,12 +19,12 @@ class PaymentClient {
     final response = await client.post(
       url,
       headers: {'Content-Type': 'application/json'},
-      body: {
-        'payment_method_id': paymentMethodId,
+      body: json.encode({
+        'paymentMethodId': paymentMethodId,
         'items': items,
         'currency': currency,
-        'use_stripe_sdk': useStripeSdk
-      },
+        'useStripeSdk': useStripeSdk
+      }),
     );
 
     return json.decode(response.body);

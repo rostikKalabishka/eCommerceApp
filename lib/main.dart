@@ -10,11 +10,13 @@ import 'package:e_commerce_app/router/router.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
+import 'package:payment_client/payment_client.dart';
 
 final dbClient = DbClient();
 final categoryRepository = CategoryRepository(dbClient: dbClient);
 final productRepository = ProductRepository(dbClient: dbClient);
 final screenFactory = ScreenFactory();
+final paymentClient = PaymentClient();
 const cartRepository = CartRepository();
 const userId = 'user_1234';
 var cart = const Cart(userId: userId, cartItem: []);
